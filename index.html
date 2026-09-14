@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Layanan Edosmart</title>
+    
+    <!-- Framework & Fonts Eksternal -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- File CSS Eksternal -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-cover bg-center min-h-screen flex flex-col items-center p-4 md:p-8 pt-32 relative" style="background-image: url('https://png.pngtree.com/background/20230522/original/pngtree-high-contrast-flat-white-cubes-wall-wall-background-picture-image_2691948.jpg');">
+    
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a192f] backdrop-blur-xl border-b border-white/10 shadow-lg px-6 py-4 flex items-center justify-between text-white">
+        <a href="https://script.google.com/macros/s/AKfycbxKqZbu-afN8_SIo1Pxfj6lrzG66xY_sSLA8sVtrKoNre-FXIaL51JPqOVfrrY6dey9Ug/exec" target="_blank" class="flex items-center space-x-2.5 cursor-pointer group">
+            <img src="https://lh3.googleusercontent.com/d/1szT3s2_AnuhwNGnGskFeyqYIxtEVv2N1" alt="Logo Bosmart" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform drop-shadow-md">
+            <span class="font-extrabold text-white text-lg tracking-tight group-hover:text-blue-400 transition-colors">EDOSMART</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+            <a href="#" class="text-blue-400 font-bold">Beranda</a>
+            <a href="#" class="hover:text-white transition-colors">Fitur</a>
+            <a href="#" class="hover:text-white transition-colors">Sekolah</a>
+            <a href="#" class="hover:text-white transition-colors">Harga</a>
+            <a href="#" class="hover:text-white transition-colors">Bantuan</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <a href="https://script.google.com/macros/s/AKfycbynJFFHBDQf-0eVFWdBTJBpUw1mOTZJcdefFi_E3OTdRkbz8bJluHbiSWQyjtPy30GV/exec" target="_blank" class="hidden md:block text-sm font-bold text-slate-300 hover:text-white transition-colors">Login Admin</a>
+            <a href="https://script.google.com/macros/s/AKfycbxKqZbu-afN8_SIo1Pxfj6lrzG66xY_sSLA8sVtrKoNre-FXIaL51JPqOVfrrY6dey9Ug/exec" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-blue-600/30 transition-all active:scale-95 inline-block text-center">
+                Coba Gratis
+            </a>
+        </div>
+    </nav>
+    
+    <div class="absolute inset-0 bg-slate-950/20 z-0"></div>
+
+    <!-- Main Section -->
+    <div class="w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-stretch justify-center gap-6 lg:gap-8 relative z-10 mt-28 md:mt-32 mb-12 px-4">
+        
+        <!-- Card Kiri (Hero Info) -->
+        <div class="w-full lg:w-[48%] bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-slate-950/50 flex flex-col justify-between relative border border-white/10 overflow-hidden">
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
+
+            <div class="relative z-10 space-y-5">
+                <div class="inline-flex items-center space-x-2.5 bg-slate-800/50 border border-white/10 px-3 py-1.5 rounded-xl shadow-sm">
+                    <div class="flex items-center justify-center w-6 h-6">
+                        <img src="https://lh3.googleusercontent.com/d/1jyNnIIMjPsQ8kGLU98eCmO-RwD9Dvgbv" alt="Logo Edosmart" class="w-full h-full object-contain drop-shadow-sm">
+                    </div>
+                    <span class="font-extrabold text-slate-200 tracking-wide text-[10px] uppercase">Edosmart Platform</span>
+                </div>
+
+                <h1 class="text-4xl md:text-[2.75rem] font-extrabold text-white tracking-tight leading-[1.1] pb-2">
+                    Portal Layanan <br>
+                    <span class="text-blue-500">BOSMART</span>
+                </h1>
+                
+                <p class="text-slate-400 text-sm font-medium leading-relaxed max-w-sm">
+                    Pilih institusi sekolah tujuan Anda untuk mengakses dashboard Bosmart dengan aman.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                        Sistem Aktif
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-bold">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        Data Aman
+                    </span>
+                </div>
+            </div>
+
+            <div class="relative z-10 pt-8 flex flex-col sm:flex-row items-center gap-3 w-full">
+                <a href="https://script.google.com/macros/s/AKfycbxKqZbu-afN8_SIo1Pxfj6lrzG66xY_sSLA8sVtrKoNre-FXIaL51JPqOVfrrY6dey9Ug/exec" target="_blank" class="w-full sm:w-1/2 inline-flex items-center justify-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-white text-xs font-bold px-4 py-3.5 rounded-xl transition-all shadow-sm border border-white/10 active:scale-95">
+                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>Coba Gratis</span>
+                </a>
+
+                <button onclick="openSubscribeModal()" class="w-full sm:w-1/2 inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-600/30 active:scale-95 border border-blue-500">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    <span>Berlangganan</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Card Kanan (Daftar Sekolah & Pencarian) -->
+        <div class="w-full lg:w-[48%] bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-6 md:p-8 shadow-2xl shadow-slate-950/50 flex flex-col justify-between relative border border-white/10">
+            <div>
+                <div class="flex items-center justify-between mb-5">
+                    <h2 class="text-lg font-extrabold text-white">Pilih Sekolah Tujuan</h2>
+                    <span id="totalBadge" class="text-xs bg-slate-800/50 text-slate-300 font-bold px-3 py-1.5 rounded-lg border border-white/10">Memuat...</span>
+                </div>
+                
+                <div class="relative mb-5">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-slate-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </span>
+                    <input type="text" id="searchSchool" onkeyup="filterSchools()" placeholder="Cari nama sekolah atau wilayah..." 
+                        class="w-full pl-11 pr-4 py-3.5 bg-slate-800/50 hover:bg-slate-800 text-white placeholder-slate-400 rounded-xl border border-white/10 focus:ring-2 focus:ring-blue-500 focus:bg-slate-800 outline-none text-sm transition-all shadow-inner">
+                </div>
+
+                <div id="schoolList" class="space-y-3.5 min-h-[220px]">
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between pt-5 mt-4 border-t border-white/10 text-xs text-slate-400 font-semibold">
+                <button id="prevBtn" onclick="changePage(-1)" class="flex items-center gap-1.5 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                    Sebelumnya
+                </button>
+                <span id="pageInfo" class="font-bold text-white bg-slate-800/50 px-3 py-1.5 rounded-lg border border-white/10">Memuat...</span>
+                <button id="nextBtn" onclick="changePage(1)" class="flex items-center gap-1.5 hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+                    Berikutnya
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="w-full max-w-5xl mx-auto mt-4 mb-16 px-4 relative z-10 reveal">
+        <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-950/20 border border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 divide-x-0 md:divide-x divide-white/10">
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-indigo-500/20 p-3.5 rounded-2xl text-indigo-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z"/></svg>
+                </div>
+                <div>
+                    <h3 id="totalSchoolStat" class="text-2xl font-black text-white">8+</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Sekolah Terdaftar</p>
+                    <p class="text-[10px] text-slate-400">Bergabung dengan Bosmart</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-emerald-500/20 p-3.5 rounded-2xl text-emerald-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-white">100%</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Sistem Aman</p>
+                    <p class="text-[10px] text-slate-400">Enkripsi data terjamin</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-blue-500/20 p-3.5 rounded-2xl text-blue-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-white">24/7</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Layanan Support</p>
+                    <p class="text-[10px] text-slate-400">Siap membantu Anda</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-purple-500/20 p-3.5 rounded-2xl text-purple-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-white">99.9%</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Uptime System</p>
+                    <p class="text-[10px] text-slate-400">Akses tanpa gangguan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="w-full max-w-5xl mx-auto mb-20 px-4 relative z-10 reveal">
+        <div class="mb-8 text-center md:text-left">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Mengapa Memilih BOSMART?</h2>
+            <p class="text-slate-400 text-sm mt-2">Platform terlengkap untuk manajemen sekolah modern</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
+                <div class="bg-blue-500/20 p-3 rounded-xl w-fit text-blue-400 mb-5 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-white mb-2">Dashboard Lengkap</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Kelola semua data sekolah dalam satu dashboard terintegrasi.</p>
+            </div>
+            
+            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
+                <div class="bg-emerald-500/20 p-3 rounded-xl w-fit text-emerald-400 mb-5 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-white mb-2">Laporan Otomatis</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Generate laporan otomatis dan akurat dalam hitungan detik.</p>
+            </div>
+            
+            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
+                <div class="bg-orange-500/20 p-3 rounded-xl w-fit text-orange-400 mb-5 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-white mb-2">Multi Platform</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Akses dimana saja, kapan saja melalui berbagai jenis perangkat.</p>
+            </div>
+            
+            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
+                <div class="bg-rose-500/20 p-3 rounded-xl w-fit text-rose-400 mb-5 group-hover:bg-rose-500 group-hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <h4 class="text-sm font-bold text-white mb-2">User Friendly</h4>
+                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Interface mudah digunakan untuk semua level pengguna.</p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-blue-900/20">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl md:text-2xl font-extrabold text-white mb-2">Siap memulai perjalanan digital sekolah Anda?</h3>
+                <p class="text-blue-100 text-sm">Bergabung dengan ribuan sekolah yang sudah merasakan manfaat Bosmart.</p>
+            </div>
+            <button onclick="openSubscribeModal()" class="bg-white hover:bg-slate-50 text-blue-600 font-bold px-8 py-4 rounded-xl shadow-lg transition-all active:scale-95 whitespace-nowrap">
+                Mulai Sekarang
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Berlangganan -->
+    <div id="subscribeModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 relative transform transition-all scale-95 opacity-0 duration-300" id="modalContent">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-base font-bold text-slate-800">Formulir Berlangganan</h3>
+                <button onclick="closeSubscribeModal()" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-xl hover:bg-slate-100 transition-all">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <form onsubmit="handleSubscribe(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Sekolah / Lembaga</label>
+                    <input type="text" id="subName" required placeholder="Masukkan nama sekolah..." class="w-full px-4 py-2.5 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none text-sm transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email Penanggung Jawab</label>
+                    <input type="email" id="subEmail" required placeholder="nama@sekolah.sch.id" class="w-full px-4 py-2.5 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none text-sm transition-all">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Nomor WhatsApp Aktif</label>
+                    <input type="tel" id="subPhone" required placeholder="08xxxxxxxxxx" class="w-full px-4 py-2.5 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none text-sm transition-all">
+                </div>
+                
+                <button type="submit" id="submitBtn" class="w-full mt-2 bg-slate-900 hover:bg-blue-600 text-white font-semibold text-xs py-3 rounded-xl transition-all shadow-md shadow-slate-900/10 hover:shadow-blue-600/20 active:scale-95 flex items-center justify-center space-x-2">
+                    <span id="btnText">Kirim Permintaan Berlangganan</span>
+                    <svg id="btnLoader" class="w-4 h-4 animate-spin hidden text-white" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-xl shadow-blue-600/30 transition-all active:scale-90 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+            </svg>
+        </button>
+
+        <div id="chatWindow" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden transform transition-all duration-300 scale-95 opacity-0">
+            
+            <div id="chatHeader" class="bg-blue-600 p-4 text-white relative">
+                <button onclick="toggleChat()" class="absolute top-4 right-4 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-1.5 rounded-full transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <div class="flex items-center space-x-2 mb-1">
+                    <span class="font-extrabold tracking-wide text-[9px] bg-white/20 px-2 py-0.5 rounded-md uppercase">EDOSMART SUPPORT</span>
+                    <span class="inline-flex items-center gap-1 text-[10px] bg-emerald-500/30 text-emerald-100 px-2 py-0.5 rounded-full">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Online
+                    </span>
+                </div>
+                <h3 id="chatHeaderTitle" class="text-sm font-bold">Halo 👋</h3>
+                <p id="chatHeaderDesc" class="text-[11px] text-blue-100 mt-0.5 leading-snug">
+                    Silahkan isi data valid agar kami dapat melakukan follow-up kendala Anda dengan cepat.
+                </p>
+            </div>
+
+            <div id="chatBodyContainer">
+                <form onsubmit="startLiveChat(event)" class="p-4 space-y-2.5 bg-white max-h-[350px] overflow-y-auto text-xs">
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-0.5">Departemen <span class="text-rose-500">*</span></label>
+                        <select id="chatDept" required class="w-full px-3 py-2 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all">
+                            <option value="" disabled selected>Pilih Departemen</option>
+                            <option value="Layanan Akademik">Layanan Akademik</option>
+                            <option value="Bantuan Teknis BOSMART">Bantuan Teknis BOSMART</option>
+                            <option value="Informasi Berlangganan">Informasi Berlangganan</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-0.5">Nama Lengkap <span class="text-rose-500">*</span></label>
+                        <input type="text" id="chatName" required placeholder="Contoh: Budi Santoso" class="w-full px-3 py-2 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-0.5">Alamat Email <span class="text-rose-500">*</span></label>
+                        <input type="email" id="chatEmail" required placeholder="email@sekolah.sch.id" class="w-full px-3 py-2 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-0.5">Nomor Telepon / WhatsApp <span class="text-rose-500">*</span></label>
+                        <input type="tel" id="chatPhone" required placeholder="08xxxxxxxxxx" class="w-full px-3 py-2 bg-slate-50 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 outline-none transition-all">
+                    </div>
+                    <button type="submit" class="w-full mt-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl transition-all shadow-md shadow-blue-600/20 active:scale-95 flex items-center justify-center space-x-2">
+                        <span>Mulai Chat</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-6 left-6 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-xl z-50 transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-3">
+        <div class="bg-emerald-500 p-1 rounded-full text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <span id="toastText" class="text-xs font-semibold">Berhasil!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-5xl mx-auto mt-16 mb-12 px-4 relative z-10 text-slate-300 text-xs">
+        <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col md:flex-row items-start justify-between gap-8">
+            
+            <div class="space-y-3 w-full md:w-1/3 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></div>
+                    <span class="font-extrabold text-white text-sm tracking-wide">EDOSMART Platform</span>
+                </div>
+                <p class="text-slate-400 text-[11px] leading-relaxed">
+                    Platform digitalisasi sekolah yang cerdas, terjangkau, dan mudah digunakan oleh semua jenjang pendidikan.
+                </p>
+                
+                <div class="flex items-center justify-center md:justify-start gap-3 pt-2">
+                    <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all shadow-sm">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-pink-600 hover:border-pink-500 transition-all shadow-sm">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white hover:bg-red-600 hover:border-red-500 transition-all shadow-sm">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-2 w-full md:w-1/4 text-center md:text-left">
+                <h4 class="font-bold text-white text-xs tracking-wider uppercase mb-3">Tautan</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="#" class="hover:text-white transition-colors">Beranda</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Fitur Unggulan</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Daftar Sekolah</a></li>
+                    <li><a href="#" onclick="openSubscribeModal(); return false;" class="hover:text-white transition-colors">Berlangganan</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3 w-full md:w-1/3 text-center md:text-left">
+                <h4 class="font-bold text-white text-xs tracking-wider uppercase mb-3">Kontak Kami</h4>
+                <div class="space-y-2.5 text-[11px]">
+                    <div class="flex items-center justify-center md:justify-start gap-2.5 text-slate-300">
+                        <svg class="w-4 h-4 text-blue-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span>+62 838-2278-8935</span>
+                    </div>
+                    <div class="flex items-start justify-center md:justify-start gap-2.5 text-slate-300">
+                        <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Jawa Barat, Indonesia</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
+            <p>© By Give Me Five 2026. Hak Cipta Dilindungi.</p>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-white transition-colors">Privasi</a>
+                <a href="#" class="hover:text-white transition-colors">Syarat dan Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- File JavaScript Eksternal -->
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Efek Container Utama Modern */
+.glass-card {
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0px 40px rgba(59, 130, 246, 0.05);
+}
+
+/* Animasi halus untuk card sekolah */
+.school-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.school-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.12), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+}
+
+/* Efek Animasi Fade In Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
