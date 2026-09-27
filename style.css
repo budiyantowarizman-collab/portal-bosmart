@@ -30,12 +30,3 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* Efek transisi halus untuk bintang rating */
-.star-icon {
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.star-icon:hover {
-    transform: scale(1.15);
-}
