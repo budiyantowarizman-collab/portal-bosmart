@@ -464,3 +464,24 @@ function loadReviews() {
     })
     .catch(err => console.error("Gagal memuat ulasan:", err));
 }
+// Pengaman otomatis agar loader pasti hilang setelah 2 detik maksimal
+window.addEventListener("load", () => {
+    const loader = document.getElementById("pageLoader");
+    if (loader) {
+        loader.classList.add("fade-out");
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    }
+});
+
+// Cadangan jika window.load tertahan
+setTimeout(() => {
+    const loader = document.getElementById("pageLoader");
+    if (loader && loader.style.display !== "none") {
+        loader.classList.add("fade-out");
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    }
+}, 2000);
