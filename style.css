@@ -31,7 +31,7 @@ body {
     transform: translateY(0);
 }
 
-/* Transisi Layar Loading Awal */
+/* Transisi Layar Loading Awal (Preloader) */
 #pageLoader {
     opacity: 1;
     visibility: visible;
