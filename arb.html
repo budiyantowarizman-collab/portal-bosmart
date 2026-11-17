@@ -17,7 +17,7 @@
     <!-- ELEMEN LOADING AWAL (PRELOADER) -->
     <div id="pageLoader" class="fixed inset-0 z-50 bg-[#0a192f] flex flex-col items-center justify-center transition-opacity duration-500">
         <div class="relative flex items-center justify-center">
-            <div class="w-14 h-14 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin"></div>
+            <div class="w-14 h-14 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
             <span class="absolute text-white font-extrabold text-[10px]">ARB</span>
         </div>
         <p class="text-slate-300 text-xs font-bold mt-4 tracking-wider animate-pulse">MEMUAT PORTAL ARB...</p>
@@ -177,123 +177,9 @@
         </div>
     </div>
 
-    <!-- Stats Section -->
-    <div class="w-full max-w-5xl mx-auto mt-4 mb-16 px-4 relative z-10 reveal">
-        <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-950/20 border border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 divide-x-0 md:divide-x divide-white/10">
-            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
-                <div class="bg-indigo-500/20 p-3.5 rounded-2xl text-indigo-400">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z"/></svg>
-                </div>
-                <div>
-                    <h3 id="totalSchoolStat" class="text-2xl font-black text-white">8+</h3>
-                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Sekolah Terdaftar</p>
-                    <p class="text-[10px] text-slate-400">Bergabung dengan Kami</p>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
-                <div class="bg-emerald-500/20 p-3.5 rounded-2xl text-emerald-400">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-white">100%</h3>
-                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Sistem Aman</p>
-                    <p class="text-[10px] text-slate-400">Enkripsi data terjamin</p>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
-                <div class="bg-blue-500/20 p-3.5 rounded-2xl text-blue-400">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636l3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-white">24/7</h3>
-                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Layanan Support</p>
-                    <p class="text-[10px] text-slate-400">Siap membantu Anda</p>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
-                <div class="bg-purple-500/20 p-3.5 rounded-2xl text-purple-400">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-black text-white">99.9%</h3>
-                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Uptime System</p>
-                    <p class="text-[10px] text-slate-400">Akses tanpa gangguan</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="w-full max-w-5xl mx-auto mb-20 px-4 relative z-10 reveal">
-        <div class="mb-8 text-center md:text-left">
-            <h2 class="text-2xl md:text-3xl font-extrabold text-white">Mengapa Memilih Give Me Five?</h2>
-            <p class="text-slate-400 text-sm mt-2">Platform terlengkap untuk manajemen sekolah modern</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
-                <div class="bg-blue-500/20 p-3 rounded-xl w-fit text-blue-400 mb-5 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-                </div>
-                <h4 class="text-sm font-bold text-white mb-2">Dashboard Lengkap</h4>
-                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Kelola semua data sekolah dalam satu dashboard terintegrasi.</p>
-            </div>
-            
-            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
-                <div class="bg-emerald-500/20 p-3 rounded-xl w-fit text-emerald-400 mb-5 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                </div>
-                <h4 class="text-sm font-bold text-white mb-2">Laporan Otomatis</h4>
-                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Generate laporan otomatis dan akurat dalam hitungan detik.</p>
-            </div>
-            
-            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
-                <div class="bg-orange-500/20 p-3 rounded-xl w-fit text-orange-400 mb-5 group-hover:bg-orange-500 group-hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                </div>
-                <h4 class="text-sm font-bold text-white mb-2">Multi Platform</h4>
-                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Akses dimana saja, kapan saja melalui berbagai jenis perangkat.</p>
-            </div>
-            
-            <div class="bg-slate-900/40 backdrop-blur-xl p-6 rounded-[1.5rem] border border-white/10 shadow-xl hover:bg-slate-800/60 transition-all group">
-                <div class="bg-rose-500/20 p-3 rounded-xl w-fit text-rose-400 mb-5 group-hover:bg-rose-500 group-hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-                </div>
-                <h4 class="text-sm font-bold text-white mb-2">User Friendly</h4>
-                <p class="text-[11px] text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">Interface mudah digunakan untuk semua level pengguna.</p>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="w-full max-w-5xl mx-auto mt-16 mb-12 px-4 relative z-10 text-slate-300 text-xs">
-        <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col md:flex-row items-start justify-between gap-8">
-            <div class="space-y-3 w-full md:w-1/3 text-center md:text-left">
-                <div class="flex items-center justify-center md:justify-start space-x-2">
-                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <span class="font-extrabold text-white text-sm tracking-wide">Give Me Five Platform</span>
-                </div>
-                <p class="text-slate-400 text-[11px] leading-relaxed">
-                    Platform digitalisasi sekolah yang cerdas, terjangkau, dan mudah digunakan oleh semua jenjang pendidikan.
-                </p>
-            </div>
-            <div class="space-y-2 w-full md:w-1/4 text-center md:text-left">
-                <h4 class="font-bold text-white text-xs tracking-wider uppercase mb-3">Tautan</h4>
-                <ul class="space-y-2 text-[11px]">
-                    <li><a href="index.html" class="hover:text-white transition-colors">Beranda Utama</a></li>
-                    <li><a href="arb.html" class="hover:text-white transition-colors">Aplikasi Rapor (ARB)</a></li>
-                </ul>
-            </div>
-            <div class="space-y-3 w-full md:w-1/3 text-center md:text-left">
-                <h4 class="font-bold text-white text-xs tracking-wider uppercase mb-3">Kontak Kami</h4>
-                <div class="space-y-2.5 text-[11px]">
-                    <div class="flex items-center justify-center md:justify-start gap-2.5 text-slate-300">
-                        <span>+62 838-2278-8935</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
+        <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2 text-center">
             <p>© By Give Me Five 2026. Hak Cipta Dilindungi.</p>
             <a href="index.html" class="hover:text-white transition-colors">Kembali ke Beranda Utama</a>
         </div>
