@@ -485,3 +485,26 @@ setTimeout(() => {
         }, 500);
     }
 }, 2000);
+// ==========================================
+// HAMBURGER MENU (MOBILE DRAWER)
+// ==========================================
+function toggleMobileMenu() {
+    const drawer = document.getElementById('mobileMenuDrawer');
+    const overlay = document.getElementById('mobileMenuOverlay');
+    
+    if (drawer.classList.contains('-translate-x-full')) {
+        // Buka Menu Samping
+        drawer.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        setTimeout(() => {
+            overlay.classList.remove('opacity-0');
+        }, 10);
+    } else {
+        // Tutup Menu Samping
+        drawer.classList.add('-translate-x-full');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => {
+            overlay.classList.add('hidden');
+        }, 300);
+    }
+}
