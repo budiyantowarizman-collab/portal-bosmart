@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARB - Give Me Five</title>
+    <title>Portal ARB - Give Me Five</title>
     
     <!-- Framework & Fonts Eksternal -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +17,7 @@
     <!-- ELEMEN LOADING AWAL (PRELOADER) -->
     <div id="pageLoader" class="fixed inset-0 z-50 bg-[#0a192f] flex flex-col items-center justify-center transition-opacity duration-500">
         <div class="relative flex items-center justify-center">
-            <div class="w-14 h-14 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
+            <div class="w-14 h-14 border-4 border-emerald-500/20 border-t-emerald-500 rounded-full animate-spin"></div>
             <span class="absolute text-white font-extrabold text-[10px]">ARB</span>
         </div>
         <p class="text-slate-300 text-xs font-bold mt-4 tracking-wider animate-pulse">MEMUAT PORTAL ARB...</p>
@@ -27,23 +27,26 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a192f] backdrop-blur-xl border-b border-white/10 shadow-lg px-6 py-4 flex items-center justify-between text-white">
         <a href="index.html" class="flex items-center space-x-2.5 cursor-pointer group">
             <img src="https://lh3.googleusercontent.com/d/1CECWGFH5t1mU8iu-m5uhWkJ8YG7nNfpO" alt="Logo GMF" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform drop-shadow-md">
-            <span class="font-extrabold text-white text-lg tracking-tight group-hover:text-emerald-400 transition-colors">GIVE ME FIVE - ARB</span>
+            <span class="font-extrabold text-white text-lg tracking-tight group-hover:text-blue-400 transition-colors">GIVE ME FIVE</span>
         </a>
         
-        <!-- Menu Desktop -->
+        <!-- Menu Desktop (Tampil di layar medium ke atas) -->
         <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
             <a href="index.html" class="hover:text-white transition-colors">Beranda</a>
-            <a href="#" class="text-emerald-400 font-bold">Aplikasi Rapor (ARB)</a>
+            <a href="#" class="hover:text-white transition-colors">Fitur</a>
+            <a href="arb.html" class="text-emerald-400 font-bold">ARB</a>
+            <a href="#" class="hover:text-white transition-colors">Harga</a>
             <a href="#" class="hover:text-white transition-colors">Bantuan</a>
         </div>
 
         <div class="hidden md:flex items-center space-x-4">
-            <a href="index.html" class="bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold px-5 py-2.5 rounded-xl border border-white/10 transition-all inline-block text-center">
-                Kembali ke Beranda
+            <a href="index.html" class="text-sm font-bold text-slate-300 hover:text-white transition-colors">Kembali ke Beranda</a>
+            <a href="https://script.google.com/macros/s/AKfycbyBpkpYH-KMRsHPnLikm3w-QrdSySsL4oBjx77uQpsisM1BRKpyfLJuFTCUakTZO4MWvg/exec" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-600/30 transition-all active:scale-95 inline-block text-center">
+                Portal ARB
             </a>
         </div>
 
-        <!-- Tombol Hamburger (Mobile) -->
+        <!-- Tombol Hamburger (Hanya tampil di HP / layar kecil) -->
         <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-xl bg-slate-800/50 border border-white/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -51,24 +54,43 @@
         </button>
     </nav>
 
-    <!-- Overlay & Mobile Menu Sidebar -->
+    <!-- Overlay & Mobile Menu Sidebar (Drawer dari Kiri) -->
     <div id="mobileMenuOverlay" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden transition-opacity opacity-0 duration-300" onclick="toggleMobileMenu()"></div>
     
     <div id="mobileMenuDrawer" class="fixed top-0 left-0 bottom-0 w-72 bg-[#0a192f] border-r border-white/10 z-50 transform -translate-x-full transition-transform duration-300 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
         <div>
+            <!-- Header Drawer -->
             <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
                 <div class="flex items-center space-x-2.5">
                     <img src="https://lh3.googleusercontent.com/d/1CECWGFH5t1mU8iu-m5uhWkJ8YG7nNfpO" alt="Logo GMF" class="w-8 h-8 object-contain">
-                    <span class="font-extrabold text-white text-sm tracking-tight">PORTAL ARB</span>
+                    <span class="font-extrabold text-white text-sm tracking-tight">GIVE ME FIVE</span>
                 </div>
                 <button onclick="toggleMobileMenu()" class="text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800/50 border border-white/10">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
             </div>
 
+            <!-- Daftar Menu Navigasi Samping -->
             <div class="flex flex-col space-y-3 text-sm font-semibold text-slate-300">
-                <a href="index.html" class="hover:text-white hover:bg-slate-800/50 px-3 py-2 rounded-xl transition-colors">Beranda Utama</a>
-                <a href="#" class="text-emerald-400 font-bold px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">Aplikasi Rapor (ARB)</a>
+                <a href="index.html" class="hover:text-white hover:bg-slate-800/50 px-3 py-2 rounded-xl transition-colors">Beranda</a>
+                <a href="#" class="hover:text-white hover:bg-slate-800/50 px-3 py-2 rounded-xl transition-colors">Fitur</a>
+                <a href="arb.html" class="text-emerald-400 font-bold px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20">ARB</a>
+                <a href="#" class="hover:text-white hover:bg-slate-800/50 px-3 py-2 rounded-xl transition-colors">Harga</a>
+                <a href="#" class="hover:text-white hover:bg-slate-800/50 px-3 py-2 rounded-xl transition-colors">Bantuan</a>
+
+                <!-- Garis Pembatas Produk -->
+                <div class="pt-3 pb-1 border-t border-white/10 text-[10px] uppercase tracking-wider text-slate-400 font-extrabold">
+                    Produk / Layanan
+                </div>
+
+                <a href="index.html" class="flex items-center space-x-2.5 text-xs text-slate-300 hover:text-white hover:bg-blue-600/20 px-3 py-2.5 rounded-xl transition-all border border-white/5">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span>Pelaporan BOSP</span>
+                </a>
+                <a href="arb.html" class="flex items-center space-x-2.5 text-xs text-white bg-emerald-600/30 px-3 py-2.5 rounded-xl transition-all border border-emerald-500/30">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span>ARB (Aplikasi Rapor)</span>
+                </a>
             </div>
         </div>
 
@@ -93,7 +115,7 @@
                     <div class="flex items-center justify-center w-6 h-6">
                         <img src="https://lh3.googleusercontent.com/d/1jyNnIIMjPsQ8kGLU98eCmO-RwD9Dvgbv" alt="Logo GMF" class="w-full h-full object-contain drop-shadow-sm">
                     </div>
-                    <span class="font-extrabold text-emerald-400 tracking-wide text-[10px] uppercase">MODUL ARB 2026</span>
+                    <span class="font-extrabold text-emerald-400 tracking-wide text-[10px] uppercase">ARB PORTAL 2026</span>
                 </div>
 
                 <h1 class="text-4xl md:text-[2.75rem] font-extrabold text-white tracking-tight leading-[1.1] pb-2">
@@ -102,7 +124,7 @@
                 </h1>
                 
                 <p class="text-slate-400 text-sm font-medium leading-relaxed max-w-sm">
-                    Pilih institusi sekolah Anda di samping untuk masuk langsung ke portal login ARB masing-masing instansi.
+                    Pilih institusi sekolah tujuan Anda untuk mengakses portal login ARB masing-masing instansi.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-3 pt-2">
@@ -110,13 +132,19 @@
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                         Sistem ARB Aktif
                     </span>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs font-bold">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        Data Aman
+                    </span>
                 </div>
             </div>
 
-            <div class="relative z-10 pt-8">
-                <a href="index.html" class="w-full inline-flex items-center justify-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-white text-xs font-bold px-4 py-3.5 rounded-xl transition-all shadow-sm border border-white/10 active:scale-95">
-                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-                    <span>Kembali ke Beranda Utama</span>
+            <div class="relative z-10 pt-8 flex flex-col sm:flex-row items-center gap-3 w-full">
+                <a href="index.html" class="w-full sm:w-1/2 inline-flex items-center justify-center space-x-2 bg-slate-800/80 hover:bg-slate-700 text-white text-xs font-bold px-4 py-3.5 rounded-xl transition-all shadow-sm border border-white/10 active:scale-95">
+                    <span>Beranda Utama</span>
+                </a>
+                <a href="arb.html" class="w-full sm:w-1/2 inline-flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-5 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-600/30 active:scale-95 border border-emerald-500">
+                    <span>Refresh Data</span>
                 </a>
             </div>
         </div>
@@ -125,7 +153,7 @@
         <div class="w-full lg:w-[48%] bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-6 md:p-8 shadow-2xl shadow-slate-950/50 flex flex-col justify-between relative border border-white/10">
             <div>
                 <div class="flex items-center justify-between mb-5">
-                    <h2 class="text-lg font-extrabold text-white">Pilih Sekolah (ARB)</h2>
+                    <h2 class="text-lg font-extrabold text-white">Pilih Sekolah Tujuan (ARB)</h2>
                     <span id="totalBadge" class="text-xs bg-slate-800/50 text-slate-300 font-bold px-3 py-1.5 rounded-lg border border-white/10">Memuat...</span>
                 </div>
                 
@@ -157,12 +185,12 @@
         </div>
     </div>
 
-    <!-- Section Pilihan Produk Lainnya -->
+    <!-- Section Pilihan Produk Berdiri Sendiri -->
     <div class="w-full max-w-6xl mx-auto mb-12 px-4 relative z-10">
         <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-6 md:p-8 border border-white/10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="space-y-1 text-center md:text-left">
-                <h3 class="text-base font-extrabold text-white">Jelajahi Modul Lainnya</h3>
-                <p class="text-slate-400 text-xs">Pindah ke layanan produk GMF yang lain.</p>
+                <h3 class="text-base font-extrabold text-white">Jelajahi Produk & Layanan GMF</h3>
+                <p class="text-slate-400 text-xs">Pilih modul aplikasi yang ingin Anda akses atau pelajari.</p>
             </div>
             <div class="flex flex-wrap items-center justify-center gap-3">
                 <a href="index.html" class="px-5 py-3 rounded-xl bg-blue-600/20 hover:bg-blue-600 text-blue-400 hover:text-white border border-blue-500/30 text-xs font-bold transition-all shadow-md flex items-center space-x-2">
@@ -177,15 +205,87 @@
         </div>
     </div>
 
+    <!-- Stats Section -->
+    <div class="w-full max-w-5xl mx-auto mt-4 mb-16 px-4 relative z-10 reveal">
+        <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-6 md:p-8 shadow-xl shadow-slate-950/20 border border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 divide-x-0 md:divide-x divide-white/10">
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-indigo-500/20 p-3.5 rounded-2xl text-indigo-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z"/></svg>
+                </div>
+                <div>
+                    <h3 id="totalSchoolStat" class="text-2xl font-black text-white">8+</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Sekolah Terdaftar</p>
+                    <p class="text-[10px] text-slate-400">Portal ARB Aktif</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-emerald-500/20 p-3.5 rounded-2xl text-emerald-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-white">100%</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Sistem Aman</p>
+                    <p class="text-[10px] text-slate-400">Enkripsi data terjamin</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-blue-500/20 p-3.5 rounded-2xl text-blue-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636l3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-white">24/7</h3>
+                    <p class="text-[11px] font-bold text-slate-200 leading-tight mt-0.5">Layanan Support</p>
+                    <p class="text-[10px] text-slate-400">Siap membantu Anda</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left px-2">
+                <div class="bg-purple-500/20 p-3.5 rounded-2xl text-purple-400">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-black text-white">99.9%</h3>
+                    <p class="text-[11px] font-black text-white">Uptime System</p>
+                    <p class="text-[10px] text-slate-400">Akses tanpa gangguan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="w-full max-w-5xl mx-auto mt-16 mb-12 px-4 relative z-10 text-slate-300 text-xs">
-        <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2 text-center">
+        <div class="bg-slate-900/40 backdrop-blur-xl rounded-[2rem] p-8 md:p-10 border border-white/10 shadow-2xl flex flex-col md:flex-row items-start justify-between gap-8">
+            <div class="space-y-3 w-full md:w-1/3 text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-2">
+                    <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                    <span class="font-extrabold text-white text-sm tracking-wide">Give Me Five Platform</span>
+                </div>
+                <p class="text-slate-400 text-[11px] leading-relaxed">
+                    Platform digitalisasi sekolah yang cerdas, terjangkau, dan mudah digunakan oleh semua jenjang pendidikan.
+                </p>
+            </div>
+            <div class="space-y-2 w-full md:w-1/4 text-center md:text-left">
+                <h4 class="font-bold text-white text-xs tracking-wider uppercase mb-3">Tautan</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Beranda Utama</a></li>
+                    <li><a href="arb.html" class="hover:text-white transition-colors">Portal ARB</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3 w-full md:w-1/3 text-center md:text-left">
+                <h4 class="font-bold text-white text-xs tracking-wider uppercase mb-3">Kontak Kami</h4>
+                <div class="space-y-2.5 text-[11px]">
+                    <div class="flex items-center justify-center md:justify-start gap-2.5 text-slate-300">
+                        <span>+62 838-2278-8935 (Jawa Barat)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2">
             <p>© By Give Me Five 2026. Hak Cipta Dilindungi.</p>
             <a href="index.html" class="hover:text-white transition-colors">Kembali ke Beranda Utama</a>
         </div>
     </footer>
 
-    <!-- File JavaScript khusus untuk ARB -->
+    <!-- File JavaScript khusus ARB -->
     <script src="arb.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-// Ganti URL di bawah ini dengan URL Web App Google Apps Script milikmu yang berakhiran /exec
-const API_URL = "URL_WEB_APP_GOOGLE_APPS_SCRIPT_KAMU_DISINI";
+// Ganti dengan URL Web App Google Apps Script milikmu yang berakhiran /exec
+const API_URL = "https://script.google.com/macros/s/MASUKKAN_URL_WEB_APP_DISINI/exec";
 
 let allSchools = [];
 let filteredSchools = [];
@@ -9,6 +9,15 @@ const itemsPerPage = 3;
 // Saat halaman arb.html dibuka, ambil data khusus ARB
 window.addEventListener("DOMContentLoaded", () => {
     fetchDataARB();
+
+    // PENGAMAN: Paksa tutup preloader setelah 4 detik jika koneksi lambat/error
+    setTimeout(() => {
+        const loader = document.getElementById("pageLoader");
+        if (loader && loader.style.display !== "none") {
+            loader.classList.add("fade-out");
+            setTimeout(() => loader.style.display = "none", 500);
+        }
+    }, 4000);
 });
 
 function fetchDataARB() {
@@ -26,7 +35,7 @@ function fetchDataARB() {
             currentPage = 1;
             renderPagination();
 
-            // Sembunyikan preloader jika ada
+            // Sembunyikan preloader jika data berhasil dimuat
             const loader = document.getElementById("pageLoader");
             if (loader) {
                 loader.classList.add("fade-out");
@@ -36,7 +45,13 @@ function fetchDataARB() {
         .catch(err => {
             console.error("Gagal memuat data ARB:", err);
             if (listContainer) {
-                listContainer.innerHTML = `<div class="text-center py-10 text-rose-400 text-xs font-semibold">Gagal memuat data sekolah ARB. Periksa koneksi atau URL API.</div>`;
+                listContainer.innerHTML = `<div class="text-center py-10 text-rose-400 text-xs font-semibold">Gagal memuat data sekolah ARB. Pastikan API_URL sudah benar.</div>`;
+            }
+            // Tetap sembunyikan preloader agar halaman tidak macet berputar
+            const loader = document.getElementById("pageLoader");
+            if (loader) {
+                loader.classList.add("fade-out");
+                setTimeout(() => loader.style.display = "none", 500);
             }
         });
 }
@@ -47,6 +62,8 @@ function renderPagination() {
     const paginatedItems = filteredSchools.slice(startIndex, endIndex);
 
     const schoolList = document.getElementById("schoolList");
+    if (!schoolList) return;
+    
     schoolList.innerHTML = "";
 
     if (paginatedItems.length === 0) {
@@ -76,12 +93,21 @@ function renderPagination() {
 
     // Update info halaman
     const totalPages = Math.ceil(filteredSchools.length / itemsPerPage) || 1;
-    document.getElementById("pageInfo").innerText = `Halaman ${currentPage} dari ${totalPages}`;
-    document.getElementById("totalBadge").innerText = `${filteredSchools.length} Sekolah`;
-    document.getElementById("totalSchoolStat").innerText = allSchools.length + "+";
+    
+    const pageInfo = document.getElementById("pageInfo");
+    if (pageInfo) pageInfo.innerText = `Halaman ${currentPage} dari ${totalPages}`;
 
-    document.getElementById("prevBtn").disabled = currentPage === 1;
-    document.getElementById("nextBtn").disabled = currentPage === totalPages;
+    const totalBadge = document.getElementById("totalBadge");
+    if (totalBadge) totalBadge.innerText = `${filteredSchools.length} Sekolah`;
+
+    const totalSchoolStat = document.getElementById("totalSchoolStat");
+    if (totalSchoolStat) totalSchoolStat.innerText = allSchools.length + "+";
+
+    const prevBtn = document.getElementById("prevBtn");
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+
+    const nextBtn = document.getElementById("nextBtn");
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
 }
 
 function changePage(direction) {
@@ -93,12 +119,13 @@ function changePage(direction) {
 }
 
 function filterSchools() {
-    const keyword = document.getElementById("searchSchool").value.toLowerCase();
+    const searchInput = document.getElementById("searchSchool");
+    if (!searchInput) return;
+    
+    const keyword = searchInput.value.toLowerCase();
     filteredSchools = allSchools.filter(school => 
         school.name.toLowerCase().includes(keyword) || school.region.toLowerCase().includes(keyword)
     );
     currentPage = 1;
     renderPagination();
 }
-
-// Simpan file ini (Ctrl + S / Cmd + S)
