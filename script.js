@@ -508,3 +508,32 @@ function toggleMobileMenu() {
         }, 300);
     }
 }
+function loadProduct(type) {
+    showLoadingSkeleton();
+
+    let endpoint = `${API_URL}?action=getSchools`; // Default BOSP
+    if (type === 'ARB') {
+        endpoint = `${API_URL}?action=getARB`; // Ambil dari sheet LINK ARB
+        document.querySelector('h1').innerText = "Portal Login Aplikasi Rapor (ARB)";
+    } else if (type === 'ADM') {
+        endpoint = `${API_URL}?action=getAdm`; // Jika nanti ada Adm Sekolah
+    }
+
+    fetch(endpoint)
+        .then(response => response.json())
+        .then(data => {
+            allSchools = data;
+            filteredSchools = data;
+            currentPage = 1;
+            renderPagination();
+
+            const statElement = document.getElementById('totalSchoolStat');
+            if (statElement) {
+                statElement.innerText = allSchools.length + "+";
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            document.getElementById('schoolList').innerHTML = `<div class="text-center py-10 text-rose-500 text-xs font-semibold">Gagal memuat data produk.</div>`;
+        });
+}
