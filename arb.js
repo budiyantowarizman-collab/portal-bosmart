@@ -1,5 +1,5 @@
 // Ganti dengan URL Web App Google Apps Script milikmu yang berakhiran /exec
-const API_URL = "https://script.google.com/macros/s/MASUKKAN_URL_WEB_APP_DISINI/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyPlQMFL_cb08aDkrDW26_Qddfbvoq_-38Zus5Nxj7HHWYcyxNSUjVKHz8pHzOc0Ki6jQ/exec";
 
 let allSchools = [];
 let filteredSchools = [];
