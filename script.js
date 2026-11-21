@@ -19,6 +19,7 @@ let chatUserData = {
 function showToast(message) {
     const toast = document.getElementById('toastNotification');
     const toastText = document.getElementById('toastText');
+    if (!toast || !toastText) return;
     toastText.innerText = message;
     
     toast.classList.remove('translate-y-20', 'opacity-0');
@@ -33,6 +34,7 @@ function showToast(message) {
 function openSubscribeModal() {
     const modal = document.getElementById('subscribeModal');
     const content = document.getElementById('modalContent');
+    if (!modal || !content) return;
     modal.classList.remove('hidden');
     setTimeout(() => {
         content.classList.remove('scale-95', 'opacity-0');
@@ -43,6 +45,7 @@ function openSubscribeModal() {
 function closeSubscribeModal() {
     const modal = document.getElementById('subscribeModal');
     const content = document.getElementById('modalContent');
+    if (!modal || !content) return;
     content.classList.remove('scale-100', 'opacity-100');
     content.classList.add('scale-95', 'opacity-0');
     setTimeout(() => {
@@ -52,6 +55,7 @@ function closeSubscribeModal() {
 
 function toggleChat() {
     const chatWindow = document.getElementById('chatWindow');
+    if (!chatWindow) return;
     const isHidden = chatWindow.classList.contains('hidden');
 
     if (isHidden) {
@@ -197,6 +201,8 @@ function handleSubscribe(e) {
 
 function showLoadingSkeleton() {
     const schoolList = document.getElementById('schoolList');
+    if (!schoolList) return; // Cegah error jika elemen daftar sekolah tidak ada di halaman
+
     let skeletonHTML = '';
     for (let i = 0; i < itemsPerPage; i++) {
         skeletonHTML += `
@@ -213,30 +219,34 @@ function showLoadingSkeleton() {
         `;
     }
     schoolList.innerHTML = skeletonHTML;
-    document.getElementById('pageInfo').innerText = "Menyiapkan data...";
-    document.getElementById('totalBadge').innerText = "...";
+    const pageInfo = document.getElementById('pageInfo');
+    const totalBadge = document.getElementById('totalBadge');
+    if (pageInfo) pageInfo.innerText = "Menyiapkan data...";
+    if (totalBadge) totalBadge.innerText = "...";
 }
 
 window.onload = function() {
-    showLoadingSkeleton();
-    
-    // Ambil data sekolah dari API Apps Script
-    fetch(`${API_URL}?action=getSchools`)
-        .then(response => response.json())
-        .then(data => {
-            allSchools = data;
-            filteredSchools = data;
-            renderPagination();
+    // Hanya muat daftar sekolah jika elemen #schoolList ada di halaman (misal di arb.html)
+    const schoolList = document.getElementById('schoolList');
+    if (schoolList) {
+        showLoadingSkeleton();
+        fetch(`${API_URL}?action=getSchools`)
+            .then(response => response.json())
+            .then(data => {
+                allSchools = data;
+                filteredSchools = data;
+                renderPagination();
 
-            const statElement = document.getElementById('totalSchoolStat');
-            if (statElement) {
-                statElement.innerText = allSchools.length + "+";
-            }
-        })
-        .catch(err => {
-            console.error(err);
-            document.getElementById('schoolList').innerHTML = `<div class="text-center py-10 text-rose-500 text-xs font-semibold">Gagal memuat data dari server.</div>`;
-        });
+                const statElement = document.getElementById('totalSchoolStat');
+                if (statElement) {
+                    statElement.innerText = allSchools.length + "+";
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                schoolList.innerHTML = `<div class="text-center py-10 text-rose-500 text-xs font-semibold">Gagal memuat data dari server.</div>`;
+            });
+    }
 
     // Muat daftar ulasan pelanggan saat halaman dibuka
     loadReviews();
@@ -261,7 +271,9 @@ function filterSchools() {
 }
 
 function applyFilters() {
-    let input = document.getElementById('searchSchool').value.toLowerCase();
+    const searchInput = document.getElementById('searchSchool');
+    if (!searchInput) return;
+    let input = searchInput.value.toLowerCase();
     
     filteredSchools = allSchools.filter(school => {
         let matchesType = (currentTypeFilter === 'ALL' || school.type === currentTypeFilter);
@@ -275,6 +287,7 @@ function applyFilters() {
 
 function renderPagination() {
     const schoolList = document.getElementById('schoolList');
+    if (!schoolList) return;
     schoolList.innerHTML = '';
 
     let startIndex = (currentPage - 1) * itemsPerPage;
@@ -282,7 +295,8 @@ function renderPagination() {
     let paginatedItems = filteredSchools.slice(startIndex, endIndex);
 
     let totalPages = Math.ceil(filteredSchools.length / itemsPerPage) || 1;
-    document.getElementById('totalBadge').innerText = `${filteredSchools.length} Sekolah`;
+    const totalBadge = document.getElementById('totalBadge');
+    if (totalBadge) totalBadge.innerText = `${filteredSchools.length} Sekolah`;
 
     if (filteredSchools.length === 0) {
         schoolList.innerHTML = `
@@ -290,9 +304,12 @@ function renderPagination() {
                 <svg class="w-8 h-8 text-slate-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 <span>Sekolah tidak ditemukan</span>
             </div>`;
-        document.getElementById('pageInfo').innerText = `Halaman 0 dari 0`;
-        document.getElementById('prevBtn').disabled = true;
-        document.getElementById('nextBtn').disabled = true;
+        const pageInfo = document.getElementById('pageInfo');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        if (pageInfo) pageInfo.innerText = `Halaman 0 dari 0`;
+        if (prevBtn) prevBtn.disabled = true;
+        if (nextBtn) nextBtn.disabled = true;
         return;
     }
 
@@ -316,9 +333,12 @@ function renderPagination() {
         schoolList.innerHTML += itemHTML;
     });
 
-    document.getElementById('pageInfo').innerText = `Halaman ${currentPage} dari ${totalPages}`;
-    document.getElementById('prevBtn').disabled = currentPage === 1;
-    document.getElementById('nextBtn').disabled = currentPage === totalPages;
+    const pageInfo = document.getElementById('pageInfo');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if (pageInfo) pageInfo.innerText = `Halaman ${currentPage} dari ${totalPages}`;
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
 }
 
 function changePage(direction) {
@@ -369,7 +389,7 @@ function setRating(rating) {
     });
     const ratingText = document.getElementById('ratingText');
     if (ratingText) {
-        ratingText.innerText = `${rating} dari 5 Bintang`;
+        ratingText.innerText = rating > 0 ? `${rating} dari 5 Bintang` : "Pilih Bintang";
     }
 }
 
@@ -380,8 +400,8 @@ function handleReviewSubmit(event) {
         return;
     }
 
-    const name = document.getElementById('reviewName').value;
-    const comment = document.getElementById('reviewComment').value;
+    const name = document.getElementById('reviewName').value.trim();
+    const comment = document.getElementById('reviewComment').value.trim();
     const btn = document.getElementById('reviewBtn');
 
     if (btn) {
@@ -389,8 +409,9 @@ function handleReviewSubmit(event) {
         btn.disabled = true;
     }
 
+    // PERBAIKAN: Menggunakan action "addReview" agar cocok dengan doPost di Apps Script
     const reviewData = {
-        action: "saveReview",
+        action: "addReview",
         nama: name,
         rating: selectedRating,
         ulasan: comment
@@ -399,7 +420,7 @@ function handleReviewSubmit(event) {
     fetch(API_URL, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(reviewData)
     })
     .then(() => {
@@ -407,10 +428,9 @@ function handleReviewSubmit(event) {
         document.getElementById('reviewName').value = "";
         document.getElementById('reviewComment').value = "";
         setRating(0);
-        const ratingText = document.getElementById('ratingText');
-        if (ratingText) ratingText.innerText = "Pilih Bintang";
         
-        setTimeout(loadReviews, 1000);
+        // Muat ulang ulasan dari Google Sheets setelah 1.5 detik
+        setTimeout(loadReviews, 1500);
     })
     .catch((error) => {
         console.error("Error:", error);
@@ -427,17 +447,20 @@ function handleReviewSubmit(event) {
 function loadReviews() {
     fetch(`${API_URL}?action=getReviews`)
     .then(response => response.json())
-    .then(data => {
+    .then(result => {
         const container = document.getElementById('reviewsList');
         if (!container) return;
+
+        // PERBAIKAN: Menangani format { status: "success", data: [...] } maupun array langsung
+        const reviews = Array.isArray(result) ? result : (result.data || []);
         
-        if (!data || data.length === 0) {
+        if (reviews.length === 0) {
             container.innerHTML = '<div class="bg-slate-800/40 border border-white/10 p-4 rounded-xl text-center text-slate-400 text-xs">Belum ada ulasan. Jadilah yang pertama memberikan ulasan!</div>';
             return;
         }
 
         container.innerHTML = "";
-        data.forEach(rev => {
+        reviews.forEach(rev => {
             let starsHtml = '';
             for (let i = 1; i <= 5; i++) {
                 if (i <= rev.rating) {
@@ -464,6 +487,7 @@ function loadReviews() {
     })
     .catch(err => console.error("Gagal memuat ulasan:", err));
 }
+
 // Pengaman otomatis agar loader pasti hilang setelah 2 detik maksimal
 window.addEventListener("load", () => {
     const loader = document.getElementById("pageLoader");
@@ -485,22 +509,22 @@ setTimeout(() => {
         }, 500);
     }
 }, 2000);
+
 // ==========================================
 // HAMBURGER MENU (MOBILE DRAWER)
 // ==========================================
 function toggleMobileMenu() {
     const drawer = document.getElementById('mobileMenuDrawer');
     const overlay = document.getElementById('mobileMenuOverlay');
+    if (!drawer || !overlay) return;
     
     if (drawer.classList.contains('-translate-x-full')) {
-        // Buka Menu Samping
         drawer.classList.remove('-translate-x-full');
         overlay.classList.remove('hidden');
         setTimeout(() => {
             overlay.classList.remove('opacity-0');
         }, 10);
     } else {
-        // Tutup Menu Samping
         drawer.classList.add('-translate-x-full');
         overlay.classList.add('opacity-0');
         setTimeout(() => {
@@ -508,6 +532,7 @@ function toggleMobileMenu() {
         }, 300);
     }
 }
+
 function loadProduct(type) {
     showLoadingSkeleton();
 
@@ -534,6 +559,9 @@ function loadProduct(type) {
         })
         .catch(err => {
             console.error(err);
-            document.getElementById('schoolList').innerHTML = `<div class="text-center py-10 text-rose-500 text-xs font-semibold">Gagal memuat data produk.</div>`;
+            const schoolList = document.getElementById('schoolList');
+            if (schoolList) {
+                schoolList.innerHTML = `<div class="text-center py-10 text-rose-500 text-xs font-semibold">Gagal memuat data produk.</div>`;
+            }
         });
 }
